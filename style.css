@@ -62,6 +62,7 @@ body {
 }
 .terjemahIndo {
   font-size: small;
+  max-height: 9em;
 }
 
 .tafsirAyat {
