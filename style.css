@@ -1,0 +1,111 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: linear-gradient(#ace1af, #5dbb94);
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+}
+
+.container-hasil {
+  max-width: 15rem;
+  max-height: 31.4em;
+  margin: 2em;
+  padding: 1.4rem 1rem;
+  border: 5px solid #afd198;
+  border-radius: 3em;
+  display: inline-block;
+  background-color: #bff6c3;
+  display: flex;
+  justify-content: center;
+}
+
+.container-hasil .namaSurat,
+.namaSuratId,
+.jenisSurat {
+  padding: 0.1em 0.2em;
+  max-width: 8em;
+  margin: 0.1em;
+  display: inline-block;
+}
+
+.container-hasil .jenisSurat {
+  left: 2em;
+}
+.namaSuratId {
+  font-size: small;
+  padding-top: -0.3em;
+}
+
+.terjemahIndo,
+.teksArab {
+  max-width: 15em;
+  max-height: 12em;
+  padding: 0.4em;
+  margin: 0.2em;
+  overflow: auto;
+  border: 3px solid #75a47f;
+  border-radius: 1.2em;
+}
+.teksArab {
+  font-size: large;
+}
+
+.tafsirAyat {
+  border: 3px solid #75a47f;
+  border-radius: 1.2em;
+  max-height: 7.8em;
+  overflow: auto;
+  padding: 0.4em;
+  margin: 0.5em;
+  font-size: small;
+}
+
+p {
+  font-size: 1em;
+}
+
+input {
+  max-width: 7em;
+  padding: 0.1em;
+  margin: 0.3em;
+  text-align: center;
+  background-color: transparent;
+  border: 3px solid #86b888;
+  border-radius: 2em;
+  transition: 800ms;
+}
+.container-input {
+  display: flex;
+  justify-content: center;
+}
+input::placeholder {
+  color: black;
+}
+
+input:focus {
+  background-color: white;
+  transition: 795ms;
+}
+
+button {
+  background-color: rgba(156, 233, 207, 0.685);
+  padding: 0.4em;
+  margin: 0.2em;
+  border-radius: 2em;
+  transition: 500ms;
+}
+
+button:hover {
+  background-color: cadetblue;
+}
