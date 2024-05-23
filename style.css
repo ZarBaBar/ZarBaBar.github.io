@@ -58,7 +58,10 @@ body {
   border-radius: 1.2em;
 }
 .teksArab {
-  font-size: large;
+  font-size: medium;
+}
+.terjemahIndo {
+  font-size: small;
 }
 
 .tafsirAyat {
