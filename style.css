@@ -109,3 +109,12 @@ button {
 button:hover {
   background-color: cadetblue;
 }
+
+@media only screen and (max-width: 600px) {
+  .terjemahIndo {
+    max-height: 10em;
+  }
+  .tafsirAyat {
+    max-height: 8em;
+  }
+}
