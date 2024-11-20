@@ -113,6 +113,26 @@ button {
 button:hover {
   background-color: cadetblue;
 }
+.daftarSurat {
+  display: flex;
+  justify-content: center;
+  margin: 1em;
+}
+ul {
+  list-style: none;
+  border: 3px solid #86b888;
+  padding: 0.5em 1em;
+  max-height: 10em;
+  overflow: auto;
+  max-width: 10em;
+  cursor: pointer;
+}
+
+li:hover {
+  transform: scale(1.05);
+  transition: 200ms;
+  background-color: #5dbb94;
+}
 
 @media only screen and (max-width: 600px) {
   .terjemahIndo {

@@ -1,6 +1,7 @@
 // const id_surat = document.querySelector(".surat").values;
 // let ayat_dicari = document.querySelector(".ayat").value;
 const btn = document.querySelector(".btn");
+const inputSurat = document.querySelector(".surat");
 // Fetch
 
 btn.addEventListener("click", () => {
@@ -77,3 +78,13 @@ const penampilKeWeb = (
         <p>Tafsir Ayat</p>
         <div class="tafsirAyat">${tafsirYangDiCari}</div>`;
 };
+
+const pemilihSurat = (inputSurat) => {
+  const surat = document.querySelectorAll("li");
+  surat.forEach((item, index) => {
+    item.addEventListener("click", () => {
+      inputSurat.value = index; // Menambahkan 1 agar sesuai dengan urutan// Menampilkan elemen yang diklik
+    });
+  });
+};
+pemilihSurat(inputSurat);
