@@ -83,7 +83,7 @@ const pemilihSurat = (inputSurat) => {
   const surat = document.querySelectorAll("li");
   surat.forEach((item, index) => {
     item.addEventListener("click", () => {
-      inputSurat.value = index; // Menambahkan 1 agar sesuai dengan urutan// Menampilkan elemen yang diklik
+      inputSurat.value = index++; // Menambahkan 1 agar sesuai dengan urutan// Menampilkan elemen yang diklik
     });
   });
 };
