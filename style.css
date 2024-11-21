@@ -134,6 +134,13 @@ li:hover {
   background-color: #5dbb94;
 }
 
+.teksArab:hover,
+.terjemahIndo:hover,
+.tafsirAyat:hover {
+  transform: scale(1.1);
+  transition: 500ms;
+}
+
 @media only screen and (max-width: 600px) {
   .terjemahIndo {
     max-height: 10em;

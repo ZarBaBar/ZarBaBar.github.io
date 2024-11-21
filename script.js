@@ -5,7 +5,7 @@ const inputSurat = document.querySelector(".surat");
 // Fetch
 
 btn.addEventListener("click", () => {
-  const id_surat = document.querySelector(".surat").value;
+  let id_surat = document.querySelector(".surat").value;
   let ayat_dicari = document.querySelector(".ayat").value;
   const URL_ENDPOINT = `https://raw.githubusercontent.com/penggguna/QuranJSON/master/surah/${id_surat}.json`;
 
@@ -23,14 +23,6 @@ btn.addEventListener("click", () => {
         terjemahYangDiCari,
         tafsirYangDiCari,
       } = kumpulanDataHasilSorting;
-      console.log(
-        namaSurat,
-        namaSuratId,
-        jenisSurat,
-        ayatYangDiCari,
-        terjemahYangDiCari,
-        tafsirYangDiCari
-      );
       const tempatPenampilHasil = document.querySelector(".hasil");
       penampilKeWeb(
         tempatPenampilHasil,
@@ -83,7 +75,7 @@ const pemilihSurat = (inputSurat) => {
   const surat = document.querySelectorAll("li");
   surat.forEach((item, index) => {
     item.addEventListener("click", () => {
-      inputSurat.value = index; // Menambahkan 1 agar sesuai dengan urutan// Menampilkan elemen yang diklik
+      inputSurat.value = index + 1; // Menambahkan 1 agar sesuai dengan urutan// Menampilkan elemen yang diklik
     });
   });
 };
