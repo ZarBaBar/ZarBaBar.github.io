@@ -1,151 +1,219 @@
+/* Mengatur margin, padding, dan box-sizing untuk seluruh elemen */
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
+/* Mengatur tampilan dasar untuk html dan body */
 html,
 body {
   height: 100%;
-}
-
-body {
-  background: linear-gradient(#ace1af, #5dbb94);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #d4f1f4, #75e6da);
   display: flex;
   justify-content: center;
-  justify-items: center;
   align-items: center;
+  padding: 1rem;
+  overflow-y: auto;
+  font-smooth: always;
+  -webkit-font-smoothing: antialiased;
 }
 
-.container-hasil {
-  max-width: 15rem;
-  max-height: 31.4em;
-  margin: 2em;
-  padding: 1.4rem 1rem;
-  border: 5px solid #afd198;
-  border-radius: 3em;
-  display: inline-block;
-  background-color: #bff6c3;
-  display: flex;
-  justify-content: center;
-}
-
-.container-hasil .namaSurat,
-.namaSuratId,
-.jenisSurat {
-  padding: 0.1em 0.2em;
-  max-width: 8em;
-  margin: 0.1em;
-  display: inline-block;
-}
-
-.container-hasil .jenisSurat {
-  left: 2em;
-}
-.namaSuratId {
-  font-size: small;
-  padding-top: -0.3em;
-}
-
-.terjemahIndo,
-.teksArab {
-  max-width: 15em;
-  max-height: 12em;
-  padding: 0.4em;
-  margin: 0.2em;
-  overflow: auto;
-  border: 3px solid #75a47f;
-  border-radius: 1.2em;
-}
-.teksArab {
-  font-size: medium;
-}
-.terjemahIndo {
-  font-size: small;
-  max-height: 9em;
-}
-
-.tafsirAyat {
-  border: 3px solid #75a47f;
-  border-radius: 1.2em;
-  max-height: 7.8em;
-  overflow: auto;
-  padding: 0.4em;
-  margin: 0.5em;
-  font-size: small;
-}
-
-p {
-  font-size: 1em;
-}
-
-input {
-  max-width: 7em;
-  padding: 0.1em;
-  margin: 0.3em;
-  text-align: center;
-  background-color: transparent;
-  border: 3px solid #86b888;
-  border-radius: 2em;
-  transition: 800ms;
-}
+/* Kontainer utama untuk input */
 .container-input {
   display: flex;
+  gap: 1rem;
   justify-content: center;
-}
-input::placeholder {
-  color: black;
-}
-
-input:focus {
-  background-color: white;
-  transition: 795ms;
+  align-items: center;
+  margin-bottom: 1rem;
 }
 
-button {
-  background-color: rgba(156, 233, 207, 0.685);
-  padding: 0.4em;
-  margin: 0.2em;
-  border-radius: 2em;
-  transition: 500ms;
+input[type="number"] {
+  flex: 1;
+  max-width: 6rem;
 }
 
-button:hover {
-  background-color: cadetblue;
-}
-.daftarSurat {
+/* Container utama */
+.main-container {
   display: flex;
+  gap: 2rem;
+  max-width: 90%;
+  width: 100%;
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 1.5rem;
+  box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 300ms ease-in-out, transform 200ms ease;
+  overflow: hidden;
   justify-content: center;
-  margin: 1em;
 }
+
+/* Efek hover untuk container */
+/* .main-container:hover {
+  box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+} */
+
+/* Sidebar untuk daftar surat */
+.sidebar {
+  flex: 0 0 18rem;
+  background-color: #f0f8ff;
+  border: 2px solid #ade8f4;
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.05);
+  overflow-y: auto;
+  max-height: 60vh;
+  max-width: 15rem;
+  transition: transform 300ms ease-in-out;
+}
+
+/* Efek hover pada sidebar */
+.sidebar:hover {
+  transform: translateX(-5px);
+}
+
+/* Daftar surat */
 ul {
   list-style: none;
-  border: 3px solid #86b888;
-  padding: 0.5em 1em;
-  max-height: 10em;
-  overflow: auto;
-  max-width: 10em;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  overflow-y: auto;
+  max-height: 40vh;
+}
+
+li {
+  padding: 0.8em 1em;
+  margin-bottom: 0.8em;
   cursor: pointer;
+  color: #00796b;
+  background-color: #e0f7fa;
+  border-radius: 0.8rem;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 200ms ease, background-color 200ms ease,
+    box-shadow 200ms ease;
 }
 
 li:hover {
-  transform: scale(1.05);
-  transition: 200ms;
-  background-color: #5dbb94;
+  background-color: #00bfa5;
+  color: #ffffff;
+  transform: translateY(-5px);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-.teksArab:hover,
-.terjemahIndo:hover,
-.tafsirAyat:hover {
-  transform: scale(1.1);
-  transition: 500ms;
+/* Container untuk konten utama */
+.container-hasil {
+  flex: 1;
+  max-width: 22rem;
+  max-height: 35em;
+  padding: 1.5rem;
+  border: 3px solid #ade8f4;
+  border-radius: 1rem;
+  background-color: #ffffff;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  transition: transform 300ms ease, box-shadow 300ms ease;
 }
 
-@media only screen and (max-width: 600px) {
-  .terjemahIndo {
-    max-height: 10em;
+/* .container-hasil:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.15);
+} */
+
+/* Styling teks */
+.namaSurat,
+.namaSuratId,
+.jenisSurat {
+  padding: 0.5em 0;
+  font-size: 1.1rem;
+  color: #00796b;
+  font-weight: bold;
+  text-align: center;
+}
+
+.teksArab {
+  font-size: 1.4rem;
+  color: #004d40;
+  text-align: center;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+/* Menata bagian terjemahan dan tafsir */
+.terjemahIndo,
+.tafsirAyat {
+  font-size: 1rem;
+  color: #00796b;
+  background-color: #e0f2f1;
+  padding: 1rem;
+  border-radius: 1rem;
+  border: 1px solid #80cbc4;
+  box-shadow: inset 0px 3px 6px rgba(0, 0, 0, 0.05);
+  overflow-y: auto;
+  max-height: 10em;
+}
+
+/* Input styling */
+input {
+  max-width: 100%;
+  padding: 0.8em;
+  margin: 0.5em 0;
+  background-color: #ffffff;
+  border: 2px solid #80cbc4;
+  border-radius: 2rem;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  transition: border-color 300ms ease, box-shadow 300ms ease;
+}
+
+input:focus {
+  border-color: #26a69a;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+  outline: none;
+}
+
+/* Tombol */
+.btn {
+  background-color: #00bfa5;
+  padding: 0.8em 1.5em;
+  border: none;
+  border-radius: 1.5rem;
+  color: #ffffff;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 300ms ease, box-shadow 300ms ease;
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+  margin-top: 0.5em;
+  align-self: center;
+}
+
+.btn:hover {
+  background-color: #00796b;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsif untuk layar kecil */
+@media only screen and (max-width: 768px) {
+  .main-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    max-width: 90%;
   }
-  .tafsirAyat {
-    max-height: 8em;
+
+  .sidebar {
+    max-width: 100%;
+    margin-bottom: 1.5rem;
+  }
+
+  .container-hasil {
+    width: 100%;
   }
 }

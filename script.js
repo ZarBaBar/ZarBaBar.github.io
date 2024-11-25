@@ -1,5 +1,8 @@
-// const id_surat = document.querySelector(".surat").values;
-// let ayat_dicari = document.querySelector(".ayat").value;
+import {
+  functionPencarianF1,
+  pemilihSurat,
+  penampilKeWeb,
+} from "./function.js";
 const btn = document.querySelector(".btn");
 const inputSurat = document.querySelector(".surat");
 // Fetch
@@ -40,43 +43,4 @@ btn.addEventListener("click", () => {
     });
 });
 // function untuk mencari ayat, terjemah dan tafsir
-const functionPencarianF1 = (datas, ayatDicari) => {
-  const hasilSorting = {
-    namaSurat: datas.name,
-    namaSuratId: datas.name_translations.id,
-    jenisSurat: datas.type,
-    ayatYangDiCari: datas.verses[ayatDicari - 1].text,
-    terjemahYangDiCari: datas.verses[ayatDicari - 1].translation_id,
-    tafsirYangDiCari: datas.tafsir.id.kemenag.text[ayatDicari],
-  };
-  return hasilSorting;
-};
-
-const penampilKeWeb = (
-  tempatHasil,
-  namaSurat,
-  namaSuratId,
-  jenisSurat,
-  ayatYangDiCari,
-  terjemahYangDiCari,
-  tafsirYangDiCari
-) => {
-  tempatHasil.innerHTML = `<div class="namaSurat">${namaSurat}</div>
-        <div class="namaSuratId">${namaSuratId}</div>
-        <div class="jenisSurat">${jenisSurat}</div>
-        <div class="teksArab">${ayatYangDiCari}</div>
-        <p>Arti Ayat</p>
-        <div class="terjemahIndo">${terjemahYangDiCari}</div>
-        <p>Tafsir Ayat</p>
-        <div class="tafsirAyat">${tafsirYangDiCari}</div>`;
-};
-
-const pemilihSurat = (inputSurat) => {
-  const surat = document.querySelectorAll("li");
-  surat.forEach((item, index) => {
-    item.addEventListener("click", () => {
-      inputSurat.value = index + 1; // Menambahkan 1 agar sesuai dengan urutan// Menampilkan elemen yang diklik
-    });
-  });
-};
 pemilihSurat(inputSurat);
